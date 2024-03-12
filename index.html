@@ -1,0 +1,291 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+
+<style>
+
+#app8g{
+    height: 450px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#app8g form{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#app8g input[type=textfield]{
+height: 25%;
+width: 80%;
+cursor: default;
+font-family: 'Roboto' sans-serif;
+background-color: rgb(2, 1, 1);
+color: white;
+padding: 15px;
+text-align: right;
+font-size: 50px;
+border: 0;
+outline: none;
+
+}
+
+#app8g input[type=button], input[type=reset]{
+width: 22%;
+cursor: pointer;
+font-family: 'Roboto' sans-serif;
+font-weight: bold;
+font-size: 26px;
+color: #000;
+padding: 18px;
+margin: 3px;
+border: 20px;
+border-radius: 100%;
+
+
+
+}
+
+
+#app8g .orange{
+    background-color: rgb(253, 140, 3);
+    color:white;
+}
+
+#app8g .gray{
+    background-color: tomato;
+    color: slategray;
+}
+
+#app8g{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+</style>
+
+
+</head>
+<body>
+    
+<h1 style="color: blue; text-align: center;font-family: fantasy;">CALCULADORA</h1>
+
+<div id="app8g">
+
+    <form name="calculator">
+
+       <input type="textfield" class="text-imput" name="ans" value=" " autocomplete=" off" readonly>
+
+       <input type="button" value="7" onclick="document.calculator.ans.value+= '7'" class="gray">
+       <input type="button" value="8" onclick="document.calculator.ans.value+= '8'" class="gray">
+       <input type="button" value="9" onclick="document.calculator.ans.value+= '9'" class="gray">
+       <input type="button" value="+" onclick="document.calculator.ans.value+= '+'" class="orange">
+
+
+    </br>
+
+    <input type="button" value="4" onclick="document.calculator.ans.value+= '4'" class="gray">
+    <input type="button" value="5" onclick="document.calculator.ans.value+= '5'" class="gray">
+    <input type="button" value="6" onclick="document.calculator.ans.value+= '6'" class="gray">
+    <input type="button" value="-" onclick="document.calculator.ans.value+= '-'" class="orange">
+
+     </br>
+
+
+     <input type="button" value="1" onclick="document.calculator.ans.value+= '1'" class="gray">
+     <input type="button" value="2" onclick="document.calculator.ans.value+= '2'" class="gray">
+     <input type="button" value="3" onclick="document.calculator.ans.value+= '3'" class="gray">
+     <input type="button" value="*" onclick="document.calculator.ans.value+= '*'" class="orange">
+
+    </br>
+
+    <input type="button" value="0" onclick="document.calculator.ans.value+= '0'" class="gray">
+     <input type="reset" value="c">
+     <input type="button" value="=" onclick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+     <input type="button" value="/" onclick="document.calculator.ans.value+= '/'" class="orange">-->
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>CALCULADORA</title>
+        <style type="text/css">
+            body{background-color: aquamarine;}
+            #calculadora {background: gray; border: 0;
+                          margin-left: auto; margin-right: auto;
+                          width: 500px; height: 300px;}
+            #calculadora td {padding: 4px;}
+            .cajita_valor {background-color: #acff38; color: #467702; border: 1px solid #454545; width: 480px; height: 40px; font-family: Arial, Helvetica; font-size: 20px; line-height: 26px; text-align: right; }
+            .boton {width: 100px; height: 40px; border: 1px solid #000; font-family: Arial; font-size: 12px; cursor: hand; background-color: #fff;}
+            .boton_largo { width: 100px; height: 40px; border: 1px solid #000;  font-family: Arial; font-size: 12px; cursor: hand; background-color: #fff;}
+            .funcion {font-weight: bold; color: #b00;}
+        </style>
+
+    </head>
+    <body>
+        <table id="calculadora">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="valor_numero" maxlength="20" value="0" class="cajita_valor" readonly="true">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" id="potencia" value="exp" class="boton_largo funcion" onclick="operar(5)">
+                </td>
+                <td>
+                    <input type="Button" id="raiz" value="raiz" class="boton_largo funcion" onclick="operar(6)">
+                </td>
+                <td>
+                    <input type="Button" id="Dividir" value="/" class="boton funcion" onclick="operar(4)">
+                </td>
+                <td>
+                    <input type="Button" id="Multiplicar" value="*" class="boton funcion" onclick="operar(3)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" id="7" value="7" class="boton" onclick="darNumero('7')">
+                </td>
+                <td>
+                    <input type="Button" id="8" value="8" class="boton" onclick="darNumero('8')">
+                </td>
+                <td>
+                    <input type="Button" id="9" value="9" class="boton" onclick="darNumero('9')">
+                </td>
+                <td>
+                    <input type="Button" id="Restar" value="-" class="boton funcion" onclick="operar(2)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" id="4" value="4" class="boton" onclick="darNumero('4')">
+                </td>
+                <td>
+                    <input type="Button" id="5" value="5" class="boton" onclick="darNumero('5')">
+                </td>
+                <td>
+                    <input type="Button" id="6" value="6" class="boton" onclick="darNumero('6')">
+                </td>
+                <td>
+                    <input type="Button" id="Sumar" value="+" class="boton funcion" onclick="operar(1)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" id="1" value="1" class="boton" onclick="darNumero('1')">
+                </td>
+                <td>
+                    <input type="Button" id="2" value="2" class="boton" onclick="darNumero('2')">
+                </td>
+                <td>
+                    <input type="Button" id="3" value="3" class="boton" onclick="darNumero('3')">
+                </td>
+                <td>
+                    <input type="Button" id="igual" value="=" class="boton funcion" onclick="esIgual()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="Button" id="0" value="0" class="boton_largo" onclick="darNumero('0')">
+                </td>
+            <td>
+                    <input type="Button" id="," value="," class="boton" onclick="darComa()">
+                </td>
+                <td>
+                <input type="Button" id="C" value="C" class="boton funcion" onclick="darC()">
+                </td>
+            </tr>
+        </table>
+    
+        <script>
+            //Declaracion de variables
+	        var num1 = 0;
+	        var num2 = 0;
+	        var opera;
+
+        //Función que coloca el número presionado
+        function darNumero(numero){
+            if(num1==0 && num1 !== '0.'){
+                num1 = numero;
+            }else{
+                num1 += numero;
+            }
+            refrescar();
+        }
+
+        //Función que coloca la coma al presionar dicho botón
+        function darComa(){
+            if(num1 == 0) {
+                num1 = '0.';
+            } else if(num1.indexOf('.') == -1) {
+                num1 += '.';
+            }
+            refrescar();
+        }
+
+        //Función que coloca la C al presionar dicho botón
+        function darC(){
+            num1 = 0;
+            num2 = 0;
+            refrescar();
+        }
+
+
+        //Esta función realiza las distintas operaciones aritméticas en función del botón pulsado
+        function operar(valor){
+            if (num1 == 0){
+                num1 = parseFloat(document.getElementById("valor_numero").value);
+            }
+            num2 = parseFloat(num1);
+            num1= 0;
+            opera = valor;
+        }
+
+        //Función para pulsar igual
+            /*
+        	suma = 1
+        	resta = 2
+        	multiplicacion = 3
+        	division = 4
+        	potencia = 5
+        */
+
+        function esIgual(){
+            num1 = parseFloat(num1);
+            switch (opera){
+                case 1:
+                    num1 += num2;
+                break;
+                case 2:
+                    num1 = num2 - num1;
+                break;
+                case 3:
+                    num1 *= num2;
+                break;
+                case 4:
+                    num1 = num2 / num1;
+                break;
+                case 5:
+                    num1 = Math.pow(num2, num1);
+                break;
+                case 6:
+                    num1 = Math.pow(num1, 1/num2);
+                break;
+            }
+            refrescar();
+            num2 = parseFloat(num1);
+            num1 = 0;
+        }
+
+        function refrescar(){
+            document.getElementById("valor_numero").value = num1;
+        }
+    </script>
+
+
+    </body>
+</html>
